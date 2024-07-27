@@ -1,0 +1,54 @@
+.baseContainer {
+    display: flex;
+    justify-content: space-between;
+    height: 180px;
+    width: 260px;
+
+    .header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 10px;
+
+        .vector {
+            color: rgba($color: #409fff, $alpha: 1);
+            cursor: pointer;
+        }        
+        .vector:hover {
+            color: rgba($color: #409fff, $alpha: 0.7);
+        }
+
+        .textContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h2 {
+                margin: 0;
+            }
+            
+            button {
+                background: transparent;
+                border: none;
+                color: #676767;
+                cursor: pointer;
+                outline: 0;
+            
+                &:hover {
+                    color: #409fff;
+                    border-bottom: .0625em solid #409fff;
+                }
+            }
+
+        }
+
+    }
+    
+    .button {
+        align-self: center;
+        height: 60px;
+        width: 240px;
+        margin-bottom: 10px;
+    }
+}

@@ -15,6 +15,7 @@
 		"sass": "^1.77.8"
 	},
 	"devDependencies": {
+		"papaparse": "^5.4.1",
 		"prettier": "^3.3.3"
 	}
 }

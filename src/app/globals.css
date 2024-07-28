@@ -1,7 +1,10 @@
 :root {
 	--htmlBackgroundColor: rgba(23,24,26,255);
 	--baseCardBackground: #ffffff;
-	--button: #babcbf;
+	--button: rgb(186, 188, 191);
+	--hoverButton: rgba(186, 188, 191, 0.85);
+	--addVector: rgb(64, 159, 255);
+	--hoverAddVector: rgba(64, 159, 255, 0.85);
 }	
 
 html {

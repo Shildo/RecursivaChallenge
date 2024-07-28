@@ -2,7 +2,12 @@
     display: flex;
     justify-content: space-between;
     height: 180px;
-    width: 260px;
+    width: 275px;
+
+    .hidden {
+        display: none;
+    }
+
 
     .header{
         display: flex;
@@ -10,12 +15,12 @@
         justify-content: space-around;
         align-items: center;
 
-        .vector {
-            color: rgba($color: #409fff, $alpha: 1);
+        .addVector {
+            color: var(--addVector);
             cursor: pointer;
         }        
-        .vector:hover {
-            color: rgba($color: #409fff, $alpha: 0.7);
+        .addVector:hover {
+            color: var(--hoverAddVector);
         }
 
         .textContainer {
@@ -27,7 +32,9 @@
                 margin: 0;
             }
             
-            button {
+            span {
+                height: 20px;
+                font-size: 14px;
                 background: transparent;
                 border: none;
                 color: #676767;
@@ -44,9 +51,22 @@
 
     }
     
+    span {
+        align-self: center;
+    }
+
+    .error {
+        height: 20px;
+        color: red;
+        font-size: 14px;
+        text-align: center;
+    }
+
     .button {
         align-self: center;
         height: 60px;
         width: 240px;
+        font-size: 18px;
+        font-weight: 500;
     }
 }

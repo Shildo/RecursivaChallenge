@@ -2,5 +2,16 @@
     border-radius: 50px;
     border: none;
     background-color: var(--button);
+    
+}
+.enabled {
     cursor: pointer;
+    
+    &:hover {
+        background-color: var(--hoverButton);
+    }
+}
+
+.disabled {
+    cursor: no-drop;
 }

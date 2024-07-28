@@ -1,0 +1,39 @@
+.baseContainer {
+    display: flex;
+    height: 450px;
+    width: 720px;
+
+    .header {  
+        height: auto;
+
+        .optionSelector {
+            display: flex;
+            justify-self: end;
+            height: 50px;
+            width: 260px;
+            
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    .list {
+        margin: 10px 0;
+        height: 330px;
+    }
+
+    .pagination {
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
+
+
+        .paginationButton{
+            width: 100px;
+            padding: 10px;
+        }
+    }
+}

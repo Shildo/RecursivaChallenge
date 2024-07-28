@@ -97,7 +97,7 @@ export default function CsvReader({ onFileLoaded }) {
 			<BaseButton
 				className={`${styles.button} ${arimo.className}`}
 				onClick={handleSubmit}
-				disabled={loading}
+				disabled={loading || error}
 			>
 				{loading ? "Loading..." : "Enviar"}
 			</BaseButton>

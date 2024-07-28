@@ -3,19 +3,17 @@
 	background-color: #f4f4f4;
 	font-weight: bold;
 
-    .extended {
-		&:first-child {
-			width: 200px;
-		}
-
-		&:nth-child(2) {
-			width: 180px;
-		}
-	}
-
-    div {
+	div {
         display: table-cell;
         padding: 0.5rem;
         border-bottom: 2px solid #ccc;
-    }
+	}
+}
+.extended {
+	:first-child {
+		width: 200px;
+	}
+	:nth-child(2) {
+		width: 155px;
+	}
 }

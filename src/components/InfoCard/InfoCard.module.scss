@@ -5,17 +5,9 @@
 
     .header {  
         height: auto;
+        display: flex;
+        user-select: none;
 
-        .optionSelector {
-            display: flex;
-            justify-self: end;
-            height: 50px;
-            width: 260px;
-            
-            &:focus {
-                outline: none;
-            }
-        }
     }
 
     .list {
@@ -29,7 +21,7 @@
         justify-content: space-between;
         align-items: center;
         margin-top: auto;
-
+        user-select: none;
 
         .paginationButton{
             width: 100px;

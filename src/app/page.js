@@ -1,10 +1,10 @@
 "use client";
-
 import CsvReader from "@/components/CsvReader/CsvReader";
 import InfoCard from "@/components/InfoCard/InfoCard";
 import styles from "./page.module.scss";
 import { useState } from "react";
 import { processCsvData } from "@/utils/csvUtils";
+import ArrowRightVector from "../../public/vectors/ArrowRightVector";
 
 export default function Home() {
 	const [data, setData] = useState(null);
@@ -17,7 +17,15 @@ export default function Home() {
 	return (
 		<main className={styles.main}>
 			<CsvReader onFileLoaded={handleFileLoaded} />
-			{data && <InfoCard data={data} />}
+			{data && (
+				<>
+					<ArrowRightVector
+						arrowColor="white"
+						circleColor="var(--vector)"
+					/>
+					<InfoCard data={data} />
+				</>
+			)}
 		</main>
 	);
 }

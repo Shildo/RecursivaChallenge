@@ -3,6 +3,7 @@ import BaseCard from "../BaseCard/BaseCard";
 import styles from "./InfoCard.module.scss";
 import BaseButton from "../BaseButton/BaseButton";
 import DisplayData from "../DisplayData/DisplayData";
+import CustomSelect from "../CustomSelect/CustomSelect";
 
 export default function InfoCard({ data }) {
 	const [selectedOption, setSelectedOption] = useState("totalPeople");
@@ -20,7 +21,7 @@ export default function InfoCard({ data }) {
 	];
 
 	const handleOptionChange = (event) => {
-		setSelectedOption(event.target.value);
+		setSelectedOption(event.value);
 		setCurrentPage(1);
 	};
 
@@ -48,21 +49,11 @@ export default function InfoCard({ data }) {
 	return (
 		<BaseCard className={styles.baseContainer}>
 			<div className={styles.header}>
-				<select
+				<CustomSelect
+					options={options}
+					selected={selectedOption}
 					onChange={handleOptionChange}
-					value={selectedOption}
-					className={styles.optionSelector}
-				>
-					{options.map((option) => (
-						<option
-							key={option.value}
-							value={option.value}
-							className={styles.option}
-						>
-							{option.label}
-						</option>
-					))}
-				</select>
+				/>
 			</div>
 
 			<div className={styles.list}>

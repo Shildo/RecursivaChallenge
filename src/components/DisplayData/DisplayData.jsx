@@ -21,8 +21,8 @@ export default function DisplayData({ selectedOption, data }) {
 		fiveMostCommonNames: () => (
 			<div className={styles.table}>
 				<TableHeader titles={["Nombre", "Apariciones"]} />
-				{data.map((name) => (
-					<TableRow data={[name[0], name[1]]} />
+				{data.map((name, index) => (
+					<TableRow data={[name[0], name[1]]} key={index} />
 				))}
 			</div>
 		),
@@ -32,8 +32,11 @@ export default function DisplayData({ selectedOption, data }) {
 					titles={["Nombre", "Edad", "Equipo"]}
 					extended={true}
 				/>
-				{data.map((person) => (
-					<TableRow data={[person.name, person.age, person.team]} />
+				{data.map((person, index) => (
+					<TableRow
+						data={[person.name, person.age, person.team]}
+						key={index}
+					/>
 				))}
 			</div>
 		),
@@ -48,7 +51,7 @@ export default function DisplayData({ selectedOption, data }) {
 					]}
 					extended={true}
 				/>
-				{data.map((team) => (
+				{data.map((team, index) => (
 					<TableRow
 						data={[
 							team.team,
@@ -56,6 +59,7 @@ export default function DisplayData({ selectedOption, data }) {
 							team.minAge,
 							team.maxAge,
 						]}
+						key={index}
 					/>
 				))}
 			</div>

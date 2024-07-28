@@ -1,6 +1,11 @@
 import styles from "./BaseButton.module.scss";
 
-export default function BaseButton({ className, children, onClick, disabled }) {
+export default function BaseButton({
+	className,
+	children,
+	onClick,
+	disabled = false,
+}) {
 	const classes = `${styles.BaseButton} ${className || ""} ${disabled ? styles.disabled : styles.enabled}`;
 
 	return (

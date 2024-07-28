@@ -1,5 +1,3 @@
-"use client";
-
 import BaseCard from "../BaseCard/BaseCard";
 import BaseButton from "../BaseButton/BaseButton";
 import styles from "./CsvReader.module.scss";
@@ -11,6 +9,7 @@ import Papa from "papaparse";
 export default function CsvReader({ onFileLoaded }) {
 	const [selectedFile, setSelectedFile] = useState(null);
 	const [error, setError] = useState(null);
+	const [loading, setLoading] = useState(false);
 	const fileInputRef = useRef(null);
 
 	const handleFileChange = (event) => {
@@ -34,8 +33,10 @@ export default function CsvReader({ onFileLoaded }) {
 
 	const handleSubmit = () => {
 		if (selectedFile) {
+			setLoading(true);
 			Papa.parse(selectedFile, {
 				skipEmptyLines: true,
+				encoding: "windows-1252",
 				complete: (results) => {
 					const headers = [
 						"name",
@@ -52,6 +53,7 @@ export default function CsvReader({ onFileLoaded }) {
 						return obj;
 					});
 					onFileLoaded(jsonData);
+					setLoading(false);
 				},
 			});
 		}
@@ -95,9 +97,9 @@ export default function CsvReader({ onFileLoaded }) {
 			<BaseButton
 				className={`${styles.button} ${arimo.className}`}
 				onClick={handleSubmit}
-				disabled={false}
+				disabled={loading}
 			>
-				Enviar
+				{loading ? "Loading..." : "Enviar"}
 			</BaseButton>
 		</BaseCard>
 	);

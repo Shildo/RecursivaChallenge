@@ -73,7 +73,7 @@ export const processCsvData = (data) => {
 		}))
 		.sort((a, b) => b.totalFans - a.totalFans);
 
-	// Retorno los valores para poder ser mostrados
+	// Retorno los valores
 	return {
 		totalPeople,
 		averageRacingAge,
